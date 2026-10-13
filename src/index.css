@@ -282,7 +282,7 @@ input:focus-visible {
 
 .deadline-row__date {
   flex: none;
-  width: 48px;
+  width: 84px;
   font-size: 13px;
   color: var(--muted);
   font-variant-numeric: tabular-nums;

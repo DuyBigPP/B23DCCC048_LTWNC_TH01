@@ -39,11 +39,10 @@ export function parseViDate(value: string): string | null {
   return toISODate(date)
 }
 
-export function formatShortDate(isoDate: string): string {
+export function formatFullDate(isoDate: string): string {
   const date = parseDateOnly(isoDate)
   if (Number.isNaN(date.getTime())) return isoDate
-  const pad = (value: number): string => String(value).padStart(2, '0')
-  return `${pad(date.getDate())}/${pad(date.getMonth() + 1)}`
+  return formatViDate(date)
 }
 
 export function formatViDate(date: Date): string {

@@ -1,7 +1,7 @@
 import { useCountdown } from '../../../hooks/useCountdown'
 import { toggleCompleted, removeDeadline } from '../deadlineSlice'
 import { PRIORITY_LABELS, type Deadline } from '../types'
-import { formatShortDate } from '../../../utils/date'
+import { formatFullDate } from '../../../utils/date'
 import { useAppDispatch } from '../../../app/hooks'
 
 interface DeadlineItemProps {
@@ -49,7 +49,7 @@ export function DeadlineItem({ deadline }: DeadlineItemProps) {
       </div>
 
       <div className={`deadline-row__priority priority--${priority}`}>{PRIORITY_LABELS[priority]}</div>
-      <div className="deadline-row__date">{formatShortDate(dueDate)}</div>
+      <div className="deadline-row__date">{formatFullDate(dueDate)}</div>
 
       <div className={`deadline-row__countdown countdown--${completed ? 'done' : countdown.tone}`}>
         {completed ? 'Đã hoàn thành' : countdown.label}
